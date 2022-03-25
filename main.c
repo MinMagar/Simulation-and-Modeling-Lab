@@ -1,5 +1,7 @@
 #include<stdio.h>
+#include<stdbool.h>
 #include "random_integer.c"
+#include "chi_square_test.c"
 int main(){
     float* r;
     r = generate_random_float(2,4,100);
@@ -8,6 +10,14 @@ int main(){
         if ((i+1) % 10 == 0) {
             printf("\n");
         }
+    }
+    bool result;
+    result = chi_square_test_on_float(r);
+    if (result){
+        printf("random varibles are uniform\n");
+    }
+    else{
+        printf("random variables are non uniform\n");
     }
     return 0;
 }
