@@ -20,6 +20,6 @@ int main(){
     else{
         printf("random variables are non uniform\n");
     }
-    pi_value_using_monte_carlo();
+    calculate_pi();
     return 0;
 }

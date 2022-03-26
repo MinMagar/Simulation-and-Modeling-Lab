@@ -3,8 +3,11 @@
 float function(float x, float y){
     return (x * x + y * y);
 }
-
-void pi_value_using_monte_carlo(){
+/*
+    In this lab monte carlo simulation model is used for calculating pi value.
+    Its take three iteration to find diffrent pi value using 200 random values of x and y.
+*/
+void calculate_pi(){
     float rand_x[200], rand_y[200];
     int x[200],y[200];
     int m,X[20],Y[20],count[10];
