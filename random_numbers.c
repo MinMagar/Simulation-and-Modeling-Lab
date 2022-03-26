@@ -25,3 +25,16 @@ float* generate_random_float(int a, int b, int m){
     return random_values;
 }
 
+int* generate_random_4_digit(int a, int b, int m){
+    static int random_var[1000];
+    random_var[0] = a;
+    random_var[1] = b;
+    for (int i =2; i < 1000; i++){
+		random_var[i] = (random_var[i-1] + random_var[i-2]) % m;
+		while (random_var[i] < 1000){
+			random_var[i + 1] = (random_var[i] + random_var[i-1]) % m;
+			random_var[i] = random_var[i + 1];
+		}
+	}
+    return random_var;
+}
