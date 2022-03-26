@@ -3,6 +3,7 @@
 #include "random_integer.c"
 #include "chi_square_test.c"
 #include "monte_carlo.c"
+#include "distributed_lag_model.c"
 int main(){
     float* r;
     r = generate_random_float(2,4,100);
@@ -21,5 +22,6 @@ int main(){
         printf("random variables are non uniform\n");
     }
     calculate_pi();
+    distributed_lag_model();
     return 0;
 }

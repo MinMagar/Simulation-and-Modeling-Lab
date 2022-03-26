@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int main () {
+int distributed_lag_model() {
 
     float I[100], C[100], T[100], G[100], Y[50];
     int no_of_years, i;
 
-    printf("Enter the National income for 2021: ");
+    printf("\nEnter the National income for 2021: ");
     scanf("%f", &Y[0]);
     printf("Enter the Government Expenditure for 2021: ");
     scanf("%f", &G[0]);
@@ -23,7 +23,5 @@ int main () {
         Y[i] = C[i] + I[i] + G[i];
         printf(" %d\t %d\t %.2f\t\t %.2f\t\t %.2f\t\t\t %.2f\t\t\t %.2f\t\n", i, 2021+i, I[i], T[i], G[i], C[i], Y[i]);
     }
-
-    return 0;
 
 }
