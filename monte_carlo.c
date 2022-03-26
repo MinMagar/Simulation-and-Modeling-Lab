@@ -1,20 +1,19 @@
 #include<stdio.h>
 #include<math.h>
-
 float function(float x, float y){
     return (x * x + y * y);
 }
 
-int main(){
+void pi_value_using_monte_carlo(){
     float rand_x[200], rand_y[200];
     int x[200],y[200];
     int m,X[20],Y[20],count[10];
-    int counter = 0,n = 10;
+    int counter = 0,n = 3;
     float pi[10],pi_avg;
     printf("Enter modulous value : ");
     scanf("%d",&m);
     int index=0;
-    for (int i = 0;i < 2; i++){
+    for (int i = 0;i < n; i++){
         printf("Enter %d value of X[%d] and Y[%d]: ",i,(i%2)+1,(i%2)+1);
         scanf("%d%d",&X[index],&Y[index]);
         printf("Enter %d value of X[%d] and Y[%d]: ",i,(i%2)+2,(i%2)+2);
@@ -52,14 +51,12 @@ int main(){
         index += 2;
     }
     pi_avg = 0;
-    for (int i=0; i<10; i++){
+    for (int i=0; i<n; i++){
         pi_avg += pi[i];
     }
-    pi_avg = pi_avg / 10;
+    pi_avg = pi_avg / n;
     float err = 0;
     err = (fabs(pi_avg - 3.141)/3.141)*100.0;
     printf("\nCalculated pi value is %f",pi_avg);
     printf("\nError percentage is %f",err);
-
-    return 0;
 }

@@ -2,6 +2,7 @@
 #include<stdbool.h>
 #include "random_integer.c"
 #include "chi_square_test.c"
+#include "monte_carlo.c"
 int main(){
     float* r;
     r = generate_random_float(2,4,100);
@@ -19,5 +20,6 @@ int main(){
     else{
         printf("random variables are non uniform\n");
     }
+    pi_value_using_monte_carlo();
     return 0;
 }
